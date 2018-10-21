@@ -1,0 +1,28 @@
+%sql 
+select * from tweets where lower(tweets.text) like '%iphone%' order by createdAt desc limit 10;
+
+---------------------------------------------------------------------------------------------------------------------------
+createdAte   |  text
+---------------------------------------------------------------------------------------------------------------------------
+1524939325	Apple??????????????iPhone X????32%?? … – iPhone Mania https://t.co/yfHc8Tfa0G
+1524939325	Apple??????????????iPhone X????32%?? … – iPhone Mania https://t.co/yfHc8Tfa0G
+1524939308	RT @The_deminator: Americans be subbing, saying we don't have schools, iphones and asking "what Nigeria is" if they have issues, they keep…
+1524939308	RT @The_deminator: Americans be subbing, saying we don't have schools, iphones and asking "what Nigeria is" if they have issues, they keep…
+1524939275	@huaweimobilepl Posiadam IPhone X, „bawilem sie” P20 Pro. Dlaczego mój telefon odblokuje w nocy a Huawei ma problem… https://t.co/ufsjatKzsn
+1524939275	@huaweimobilepl Posiadam IPhone X, „bawilem sie” P20 Pro. Dlaczego mój telefon odblokuje w nocy a Huawei ma problem… https://t.co/ufsjatKzsn
+
+=================================================================================================================================================
+=================================================================================================================================================
+=================================================================================================================================================
+
+
+%sql
+select CreatedAt, count(text) as nreg from tweets where lower(text) like '%iphone%' group by createdAt order by nreg desc limit 10;
+
+---------------------------------------------------------------------------------------------------------------------------
+createdAte   |  text
+---------------------------------------------------------------------------------------------------------------------------
+1524939359	2
+1524939308	2
+1524939325	2
+1524939275	2
